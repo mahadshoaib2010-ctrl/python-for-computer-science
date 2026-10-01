@@ -13,6 +13,8 @@ ascii_art = r""" .-') _    ('-. .-.   ('-.         _ .-') _                    .
 print(ascii_art)
 
 pygame.mixer.init()
+pygame.mixer.music.load("Temple of Time - The Legend of Zelda Ocarina of Time OST.mp3")
+pygame.mixer.music.play()
 
 
 name = input("Enter name: ")
@@ -20,5 +22,3 @@ name = input("Enter name: ")
 print(f"welcome {name} to THE DUNGEON OF TIME in this realm time is altered your job is to fix time and bring peace go through these doors and complete the 4 mini dungeons. Good Luck")
 
 flag = True
-
-while flag == True 
