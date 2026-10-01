@@ -12,7 +12,8 @@ ascii_art = r""" .-') _    ('-. .-.   ('-.         _ .-') _                    .
 
 print(ascii_art)
 
-py.game
+pygame.mixer.init()
+
 
 name = input("Enter name: ")
 
@@ -20,4 +21,4 @@ print(f"welcome {name} to THE DUNGEON OF TIME in this realm time is altered your
 
 flag = True
 
-while flag:
+while flag == True 
