@@ -36,7 +36,16 @@ while flag == True:
         secret_code = "with time comes a dire price face a challenge to restore time slightly to it's chosen path"
         scrambled_code = "twhi itme a erid icepr ecaf a llngechae ot sortere imet tlyhgils ot s'ti nesoch htap"
         print(f"here is your scrambled code: {scrambled_code}")
+
+        is_correct = False
+while not is_correct:
         guess = input("Enter your guesss: ")
-elif guess.strip().lower() == secret_code.lower():
-        
+        if guess.strip().lower() == secret_code.lower():
+             print("\nSuccess! you decoded the message but your challenge awaits go through this door and good luck")
+             print(f"-> {secret_code}")
+             is_correct = True
+        else:
+             print("Try again!\n")
+
+
 
