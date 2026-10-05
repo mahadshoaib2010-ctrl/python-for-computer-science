@@ -34,9 +34,15 @@ while game_life:
     choice_1 = input("\nWhere would you like to go (mini dungeon 1/time shop/quit): ").strip().lower()
     pygame.mixer.music.stop()
 
+   
+   
+
+    
     if choice_1 == "mini dungeon 1":
         start_1 = input("write 'enter' to enter(enter): ")
-
+        pygame.mixer.init()
+        pygame.mixer.music.load("Skyrim - Music & Ambience - Dungeons - Everness (192k).mp3")
+        pygame.mixer.music.play()
         print("Welcome to Mini Dungeon 1 here you will have to decode a code ")
         secret_code = "with time comes a dire price face a challenge to restore time slightly to its chosen path"
         scrambled_code = "twhi itme semco a erid icepr ecaf a llngechae ot sortere imet tlyhgils ot s'ti nesoch htap"
