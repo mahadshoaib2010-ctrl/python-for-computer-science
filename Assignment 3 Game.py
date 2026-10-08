@@ -57,13 +57,35 @@ while game_life:
 
     if mini_boss_room == "enter":
         pygame.mixer.music.stop
-        pygame.mixer.music.load("h")
+        pygame.mixer.music.load("Gerudo Valley - The Legend of Zelda Ocarina Of Time - Halo2playa (192k).mp3")
         pygame.mixer.music.play()
         print("HUH FEEBLE HUMAN YOU DARE CHALLENGE ME TRY YOUR BEST!!")
+       
         print("oh no it's the feared time giant you must defeat him to continue on")
 
-    
-    
+        player_hp = 100
+        player_heals = 0
+        boss_hp = 150
+
+        game_over = False
+
+    while player_hp > 0 boss_hp > 0 and not game_over:
+        print(f"Your HP: {player_hp} | Heals left: {player_heals}")
+        print(f"Boss HP: {boss_hp}")
+        print("\nChoose your action:")
+        print("1. Attack")
+        print("2. Shield")
+        print("3. Heal")
+
+    choice_fight =  input("Enter choice (1, 2, or 3: )")
+    print()
+
+    player_damage = 0
+    shield_active = False
+
+    if choice == "1":
+        player_damage = random.randint(15, 25)
+
     elif choice_1 == "time shop":
         print("\nWelcome to the Time Shop!")
 
