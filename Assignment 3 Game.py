@@ -57,21 +57,98 @@ while game_life:
 
     if mini_boss_room == "enter":
         pygame.mixer.music.stop
-        pygame.mixer.music.load("h")
+        pygame.mixer.music.load("Gerudo Valley - The Legend of Zelda Ocarina Of Time - Halo2playa (192k).mp3")
         pygame.mixer.music.play()
         print("HUH FEEBLE HUMAN YOU DARE CHALLENGE ME TRY YOUR BEST!!")
+       
         print("oh no it's the feared time giant you must defeat him to continue on")
 
-    
-    
-    elif choice_1 == "time shop":
-        print("\nWelcome to the Time Shop!")
+        player_hp = 100
+        player_heals = 0
+        boss_hp = 150
+        RED = '\033[31m'
+        GREEN = '\033[32m'
+        YELLOW = '\003[33m'
+        BLUE = '|033[34m'
+        RESET = '\033[0m'
+        game_over = False
 
-    elif choice_1 == "quit":
+    while player_hp > 0 and boss_hp > 0 and not game_over:
+            print(f"{BLUE}Your HP: {player_hp} | Heals left: {player_heals} {RESET}")
+            print(f"{RED}Boss HP: {boss_hp} {RESET}")
+            print("\nChoose your action:")
+            print("1. Attack")
+            print("2. Shield")
+            print("3. Heal")
+
+    choice_fight =  input("Enter choice (1, 2, or 3: )")
+    print()
+
+    player_damage = 0
+    shield_active = False
+
+    if choice_fight == "1":
+        player_damage = random.randint(15, 25)
+        boss_hp = boss_hp - player_damage
+        print(f"{BLUE}you struck the Time giant for {player_damage} {RESET}")
+    elif choice_fight == "2":
+        shield_active = True
+        print(f"{BLUE}you raised your shield and blocked the Time giants attack {RESET}")
+
+    elif choice_fight == "3":
+        if player_heals > 0:
+            heal_amount = 30
+            player_hp = player_hp + heal_amount
+            player_heals = player_heals - 1
+            print(f"{BLUE} you used a potion a recovered {heal_amount} HP!!! {RESET}")
+        else:
+            print(f"{BLUE}you have no heals left (visit the Time shop to buy some more){RESET}")
+
+    else:
+        print("invalid choice! you lost your turn")
+
+    if boss_hp > 0:
+        boss_damage = random.randint(10, 20 )
+
+        if shield_active:
+            boss_damage = boss_damage // 2
+            print(f"{RED}your shield blocked part of the hit! you took {boss_damage} damage {RESET} ")
+        else:
+            print(f"{RED}the Time giant hits you for {boss_damage} damage! {RESET}")
+
+        player_hp = player_hp - boss_damage
+
+    print("-" * 40)
+
+if player_hp > 0 and boss_hp <= 0:
+    print("\nVICTORY! you vanquished the Time giant!")
+
+elif player_hp <= 0:
+    print("\nDEFEAT you got killed by the Time giant")
+    
+
+            
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+elif choice_1 == "time shop":
+    print("\nWelcome to the Time Shop!")
+
+elif choice_1 == "quit":
         game_life = False
         print("\nThanks for playing!")
 
-    else:
+else:
         print("\nInvalid choice, try again.")
 
 
